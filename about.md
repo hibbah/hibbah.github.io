@@ -8,7 +8,8 @@ summary: "About this blog"
 active: about
 ---
 
-![memory1]({{ site.url }}/img/baby.jpg)
+<!-- 이미지 날림 -->
+<!-- ![memory1]({{ site.url }}/img/baby.jpg) -->
 
 # JooHyun-Won
 
