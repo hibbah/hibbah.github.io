@@ -1,6 +1,6 @@
 ---
 bg: "tag.jpg"
-layout: 
+layout: page
 permalink: /posts/
 title: "Archive"
 crawlertitle: "All articles"

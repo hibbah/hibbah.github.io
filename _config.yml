@@ -30,6 +30,9 @@ safe: false
 lsi: false
 excerpt_separator: "\n\n"
 
+# Fill in your Google Analytics ID to track your website using GA
+google_analytics: "UA-77161350-2"
+
 
 compress_html:
   comments: ["<!-- ", " -->"]
