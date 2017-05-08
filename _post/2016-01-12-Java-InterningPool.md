@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Java - Interning Pool
-comments: true
 ---
 
 ----
@@ -60,7 +59,7 @@ if(str1 == str2) // false
 ## 3. ==연산자, 객체, 참조변수에 대한 이해
 
 결론부터 얘기하면 Java에서 String객체의 비교는 .equals() 메서드를 이용해야한다. 직전의 코드를 '두 개의 String객체 값을 비교'하는 의도대로 작성한 올바른 코드는 아래와 같다.
- 
+
 ```java
 // Java
 if(str1.equals(str2)) // true
@@ -68,12 +67,12 @@ if(str1.equals(str2)) // true
 ```
 
 C++에서는 string 객체에 대해 비교연산자(==)를 사용하면 string class 내부적으로 정의된 operator overloading의 동작을 수행하게 된다.
-  
+
 ```cpp
 // C++
 class string{
   ...
-  
+
   bool operator == (const String & str){
     // 길이가 다르면 return false
     // 길이가 같으면 character단위로 문자열 비교
@@ -189,4 +188,4 @@ str1 += "~~"과 같이 새로 생성된 객체를 참조변수 str1에 할당하
 
 1. Interning Pool에서 있나/없나를 확인하는 성능 ? (hash 구조?)
 2. Interning Pool은 어떤 메모리 영역에? (heap추측)
-3. String객체 외에 Interning이 적용되는 객체는 ? (immutable 속성을 갖는 모든 객체?) 
+3. String객체 외에 Interning이 적용되는 객체는 ? (immutable 속성을 갖는 모든 객체?)

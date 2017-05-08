@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Java - Lambda Exression
-comments: true
 ---
 
 <br><br>
@@ -10,12 +9,12 @@ comments: true
 
 ----
 
-컴퓨터과학 및 수리논리학에서 함수 정의, 함수 적용, 귀납적 함수를 추상화한 형식 체계이다. 1930년대 알론조 처치가 수학기초론을 연구하는 과정에서 람다 대수의 형식을 제안하였다. 
+컴퓨터과학 및 수리논리학에서 함수 정의, 함수 적용, 귀납적 함수를 추상화한 형식 체계이다. 1930년대 알론조 처치가 수학기초론을 연구하는 과정에서 람다 대수의 형식을 제안하였다.
 
 알론조 처치가 제안한 람다는 프로그래밍 언어가 아니라 수학적 추상화였지만, 이후에 함수형 프로그래밍의 근간을 이루었다.
 
 함수형 프로그래밍이란, 한 번쯤은 들어봤을 '절차지향' 또는 '객체지향'과 같이 프로그래밍 패러다임중의 하나이다. 객체지향 프로그래밍이 **명령형 프로그래밍(Imperative Programming)**에 속해있는 반면 함수형 프로그래밍은 함수간의 속성과 관계를 선언하여 최종 결과를 계산하는 방법을 기술하는 형식으로써 **선언형 프로그래밍(Declarative Programming)**에 속한다.
-  
+
 아래 표는 명령형 방법과 함수형 방법의 차이를 간략하게 설명해준다.
 
 ![imperative_functional]({{ site.url }}/img/imperative_functional.JPG)
@@ -66,7 +65,7 @@ int main() {
 		{ "John", 100 },
 		{ "Mike", 75 }
 	};
-	
+
 	sort(students.begin(), students.end(),
 		[](Student & a, Student & b) {
 			return a.score < b.score;
@@ -148,62 +147,62 @@ Collections.sort(personList,
 아래는 학생이라는 데이터 타입에 대해 다수의 학생들 중 최고 점수를 얻은 학생을 찾는 프로그램 코드이다.
 
 ```java
-class Student 
-{ String name; int gradYear; double score; } 
- 
-List students = ...; 
- 
-double max = Double.MIN_VALUE; 
-for (Student s : students) { 
-   if (s.gradYear == 2011) max = Math.max(max, s.score); 
-} 
-return max; 
+class Student
+{ String name; int gradYear; double score; }
+
+List students = ...;
+
+double max = Double.MIN_VALUE;
+for (Student s : students) {
+   if (s.gradYear == 2011) max = Math.max(max, s.score);
+}
+return max;
 ```
 
 만약 List에 꽤 많은 원소들이 저장되어 있어, 이를 병렬 프로그래밍으로 해결하고자 코드를 작성하면..
 
 ```java
-public class Task extends java.util.concurrent.RecursiveAction { 
-    List students; 
-    Task(List as) { students = ss; } 
-    Task leftHalf() { 
-         int n = students.size(); 
-        return new Task (students.subList(0, n/2)); 
-     } 
-    Task rightHalf() { 
-          int n = students.size(); 
-           return new Task (students.subList(n/2, n)); 
-    } 
- 
-   double computeSequentially() { 
-        double max = Double.MIN_VALUE; 
-        for (Student s : students) { 
-           if (s.gradYear == 2011) max = Math.max(max, s.score); 
-       } 
-       return max; 
-    } 
- 
-    static final int SEQUENTIAL_THRESHOLD = 1 << 14; 
-    double result; 
- 
+public class Task extends java.util.concurrent.RecursiveAction {
+    List students;
+    Task(List as) { students = ss; }
+    Task leftHalf() {
+         int n = students.size();
+        return new Task (students.subList(0, n/2));
+     }
+    Task rightHalf() {
+          int n = students.size();
+           return new Task (students.subList(n/2, n));
+    }
+
+   double computeSequentially() {
+        double max = Double.MIN_VALUE;
+        for (Student s : students) {
+           if (s.gradYear == 2011) max = Math.max(max, s.score);
+       }
+       return max;
+    }
+
+    static final int SEQUENTIAL_THRESHOLD = 1 << 14;
+    double result;
+
     protected void compute() {
       if (students.size() < SEQUENTIAL_THRESHOLD) {
-           result = computeSequentially(); 
-      } else { 
-         Task left = leftHalf(); 
-         Task right = rightHalf(); 
-          invokeAll(left, right); // INVOKE-IN-PARALLEL (병행 처리 시작) 
+           result = computeSequentially();
+      } else {
+         Task left = leftHalf();
+         Task right = rightHalf();
+          invokeAll(left, right); // INVOKE-IN-PARALLEL (병행 처리 시작)
           result = Math.max(left.result, right.result);
-         } 
-     } 
- 
-     static double compute(List as) { 
-          ForkJoinPool pool = new ForkJoinPool(); 
-         Task t = new Task(ss); 
-         pool.invoke(t); 
+         }
+     }
+
+     static double compute(List as) {
+          ForkJoinPool pool = new ForkJoinPool();
+         Task t = new Task(ss);
+         pool.invoke(t);
          return t.result;
-         } 
-  } 
+         }
+  }
 ```
 
 간단한 프로그램조차 병렬 프로그래밍으로 바꾸는게 쉽지 않은 작업임을 확실하게 느낄 수 있다.
@@ -212,8 +211,8 @@ public class Task extends java.util.concurrent.RecursiveAction {
 
 ```java
 double max = students.parallel()
-                           .filter(s -> s.gradYear == 2011) 
-                           .map(s -> s.score) 
+                           .filter(s -> s.gradYear == 2011)
+                           .map(s -> s.score)
                            .reduce(0.0, Math#max);
 ```
 
@@ -232,5 +231,3 @@ double max = students.parallel()
 [http://tmondev.blog.me/220288794560](http://tmondev.blog.me/220288794560)
 [http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html#section2](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html#section2)
 [http://www.oracle.com/kr/corporate/magazines/winter-tech2-1429486-ko.pdf](http://www.oracle.com/kr/corporate/magazines/winter-tech2-1429486-ko.pdf)
-
-
