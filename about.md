@@ -1,24 +1,55 @@
 ---
-bg: "owl.jpg"
 layout: page
-title: "About"
-crawlertitle: "Hibbah"
+title: About
 permalink: /about/
-summary: "About this blog"
-active: about
 ---
 
-<!-- 이미지 날림 -->
-<!-- ![memory1]({{ site.url }}/img/baby.jpg) -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet urna eu dolor placerat varius. Vivamus eros augue, consequat id scelerisque nec, fringilla in est. Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet urna eu dolor placerat varius. Vivamus eros augue, consequat id scelerisque nec, fringilla in est. Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.  
 
-# JooHyun-Won
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet urna eu dolor placerat varius. Vivamus eros augue, consequat id scelerisque nec, fringilla in est. Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula. 
 
-## 원주현, Hibbah
+Sed faucibus felis purus, sed convallis leo dictum vehicula.
 
-----
+## Education
 
-NHN Entertainment<br>
-TOAST ROOKIE 3rd
+* ABC degree from XYZ University.
+* ABC degree from XYZ University.
+* ABC degree from XYZ University.
 
-email: wjy721@naver.com<br>
-github: [github.com/hibbah](https://github.com/hibbah)
+## Roles
+
+Founder, ABC Organisation
+
+## Skills
+
+* **Skill 1** - `Skill` / `Skill` / `Skill` / `Skill`
+* **Skill 2** - `Skill` / `Skill` / `Skill` / `Skill` / `Skill` / `Skill` / `Skill`
+* **Skill 3** - `Skill` / `Skill` / `Skill`
+* **Skill 4** - `Skill` / `Skill` / `Skill` 
+* **Skill 5** - `Skill`
+* **Skill 6** - `Skill` / `Skill` 
+    
+    
+## Achievements
+
+
+* [**This is my first achievement**](#) 
+   
+   Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.
+
+***
+
+* [**This is my second achievement**](#) 
+
+    Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.
+
+***
+
+* [**This is my third achievement**](#) 
+
+   Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula
+
+
+## Contact me
+
+[agarwal.akshay.akshay8@gmail.com](mailto:agarwal.akshay.akshay8@gmail.com)
