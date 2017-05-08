@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Java - Interning Pool
+author: Hibbah
 ---
 
 ----
